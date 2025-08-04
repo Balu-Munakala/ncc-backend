@@ -23,7 +23,7 @@ dotenv.config();
 
   // In dev, front is on :3000, back on :5000
   app.use(cors({
-      origin: { process.env.CLIENT_URL || 'http://localhost:3000'},
+      origin: process.env.CLIENT_URL || 'http://localhost:3000',
     credentials: true
   }));
   app.use(express.json());
