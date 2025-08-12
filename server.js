@@ -22,9 +22,7 @@ dotenv.config();
   const app = express();
 
   // In dev, front is on :3000, back on :5000
-  const allowedOrigins = (process.env.CLIENT_URL || 'http://localhost:3000')
-  .split(',')
-  .map(origin => origin.trim());
+  const allowedOrigins = process.env.CLIENT_URL;
 
   app.use(cors({
     origin: function (origin, callback) {
